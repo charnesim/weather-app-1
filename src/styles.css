@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, Helvetica, sans-serif
+  color: rgb(48, 47, 47);
+  font-color: white;
+  
+
+}
+
+h1 {
+  color: rgb(48, 47, 47);
+}
+
+.searchbox {
+  position: relative;
+  left: 300px;
+  top: 10px;
+}
+
+.current-city {
+  font-size: 40px;
+  position: relative;
+  right: 300px;
+}
+
+.date-time {
+  position: relative;
+  right: 300px;
+}
+
+.more-info {
+  font-size: 20px;
+  position: relative;
+  left: 250px;
+}
+
+.small-font {
+  font-size: 20px;
+}
+
+.smaller-font {
+  font-size: 15px;
+}
+
+.future-temp {
+  text-align: center;
+  font-size: 15px;
+}
+
+.cloud1 {
+  position: relative;
+  left: -300px;
+}
+
+.cloud2 {
+  position: relative;
+  left: -255px;
+}
+
+.cloud3 {
+  position: relative;
+  left: -200px;
+}
+
+.cloud4 {
+  position: relative;
+  left: -145px;
+}
+
+.cloud5 {
+  position: relative;
+  left: -90px;
+}
+
+.cloud6 {
+  position: relative;
+  left: -35px;
+}
+
+.current-cloud {
+  position: relative;
+  top: 120px;
+  left: 320px;
+  font-size: 50px;
+}
+
+.large-degree {
+  position: relative;
+  top: -90px;
+}
+
+.card-body {
+  background: radial-gradient(circle at 10% 20%, rgb(253, 239, 132) 0%, rgb(247, 198, 169) 54.2%, rgb(21, 186, 196) 100.3%);
+
+}
