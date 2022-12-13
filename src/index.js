@@ -68,14 +68,29 @@ function displayCity(event) {
 
   //takes weather from api call an injects into app
   function displayWeather(response) {
-    console.log(response);
+    console.log(response.data);
     let weather = Math.round(response.data.main.temp);
 
     let largeDegree = document.querySelector("#degrees");
     largeDegree.innerHTML = weather;
 
+    let weatherIcon = document.querySelector("#weather-emoji");
+    weatherIcon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+    weatherIcon.setAttribute("alt", response.data.weather[0].description);
+
+    let windElement = document.querySelector("#wind-speed");
+    windElement.innerHTML = Math.round(response.data.wind.speed);
+
+    let descriptionElement = document.querySelector("#weather-description");
+    descriptionElement.innerHTML = response.data.weather[0].description;
+
     getForecast(response.data.coord);
     //console.log(response.data.coord);
+
+    appInfo(response);
   }
 
   axios.get(apiUrl).then(displayWeather);
@@ -93,7 +108,7 @@ function getLocation() {
 
     //get longtitude and latitude api response, and inject city and weather to weather app
     function changeCurrentCityDegree(response) {
-      console.log(response);
+      //console.log(response);
       let temp = response.data.main.temp;
 
       let largeDegree = document.querySelector("#degrees");
@@ -141,7 +156,7 @@ function convertCelsius(event) {
 }
 
 function dailyForecast(response) {
-  console.log(response.data);
+  // console.log(response.data);
   let forecastDay = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -180,3 +195,7 @@ function getForecast(coordinates) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(dailyForecast);
 }
+
+//function appInfo(response) {}
+
+//axios.get(apiUrl).then(appInfo);
